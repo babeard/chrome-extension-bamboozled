@@ -1,11 +1,11 @@
 function fixPDFViewCSS() {
-  var el = document.querySelector(".legacyModal__content");
-  // Add class to element
-  el.classList.add("legacyModal__content--noMaxHeight");
+  // Remove max height from element
+  var contentEl = document.querySelector(".legacyModal__content");
+  contentEl.style.maxHeight = "none";
 
-  var el2 = document.querySelector(".legacyModal__actions");
-  // Add style to element
-  el2.style.padding = "0px";
+  // Compact action bar
+  var actionsEl = document.querySelector(".legacyModal__actions");
+  actionsEl.style.padding = "0px";
 }
 
 chrome.action.onClicked.addListener((tab) => {
